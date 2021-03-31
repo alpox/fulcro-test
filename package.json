@@ -1,0 +1,41 @@
+{
+    "name": "app",
+    "version": "1.0.0",
+    "description": "",
+    "private": true,
+    "scripts": {
+        "client/main": "npx shadow-cljs watch :main",
+        "client/workspaces": "npx shadow-cljs watch :workspaces",
+        "client/test": "npx shadow-cljs watch :test",
+        "client/cljs": "shadow-cljs cljs-repl :main",
+        "client/clj": "shadow-cljs clj-repl",
+        "client/server": "npx shadow-cljs server",
+        "client/nodejs": "npx shadow-cljs node-repl",
+        "server": "clojure -A:dev -J-Dtrace -J-Dghostwheel.enabled=true",
+        "start": "npx run-p client/server server",
+        "css/main": "npx postcss -w css/styles.css -o resources/public/css/styles.css",
+        "css/workspaces": "npx postcss -w css/styles.css -o resources/public/workspaces/css/styles.css"
+    },
+    "devDependencies": {
+        "autoprefixer": "^10.2.5",
+        "highlight.js": "^9.13.1",
+        "intl-messageformat": "^2.2.0",
+        "karma": "^5.2.3",
+        "karma-chrome-launcher": "^3.1.0",
+        "karma-cljs-test": "^0.1.0",
+        "npm-run-all": "^4.1.5",
+        "postcss": "^8.2.8",
+        "postcss-cli": "^8.3.1",
+        "postcss-nested": "^5.0.5",
+        "react": "^17.0.1",
+        "react-dom": "^17.0.1",
+        "react-grid-layout": "^0.16.6",
+        "react-icons": "^2.2.7",
+        "reakit": "^0.11.2",
+        "shadow-cljs": "^2.11.23",
+        "showdown": "^1.9.1",
+        "tailwindcss": "^2.0.4"
+    },
+    "author": "",
+    "license": "MIT"
+}

@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.calc {
+    --gap: 8px;
+    
+    display: grid;
+    width: 400px;
+    height: min(100%, 600px);
+    background: #ccc;
+    grid-gap: var(--gap);
+    
+    grid-auto-rows: 1fr; 
+    grid-auto-columns: 1fr; 
+    
+    grid-template-areas:
+        "d d d d"
+        "d d d d"
+        "c c s x"
+        "n n n m"
+        "n n n p"
+        "n n n e"
+        "z z i e";
+    
+    .calc-btn {
+        background: #aaa;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2rem;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    
+    .calc-btn:hover {
+        background: #888;
+    }
+
+    #displays {
+        display: flex;
+        flex-flow: column;
+        grid-area: d;
+        background: #aaa;
+        padding: .5rem 1rem;
+        cursor: default;
+        font-size: 2rem;
+        font-weight: bold;
+        
+        > div {
+            display: flex;
+            flex: 1;
+            justify-content: flex-end;
+            align-items: center;
+        }
+    }
+    
+    #clear {
+        grid-area: c;
+    }
+    
+    #zero {
+        grid-area: z;
+    }
+    
+    #equals {
+        grid-area: e;
+    }
+    
+    .numbers {
+        grid-area: n;
+        
+        display: grid;
+        grid-gap: var(--gap);
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+    }
+    
+    #one, #two, #three {
+        grid-row: 3;
+    }
+
+    #seven, #eight, #nine {
+        grid-row: 1;
+    }
+}
